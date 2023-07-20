@@ -760,8 +760,6 @@ body {
   gap: 40px;
 }
 .content-left__cart {
-  max-width: 652px;
-  max-height: 306px;
   display: flex;
   box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
 }
@@ -850,6 +848,7 @@ input[type=number] {
   font-style: normal;
   font-weight: 300;
   line-height: normal;
+  margin-bottom: 20px;
 }
 .content-right__form {
   display: flex;
@@ -1099,8 +1098,8 @@ input[type=number] {
 
 @media screen and (max-width: 1024px) {
   .center {
-    max-width: 736px;
-    margin: 0 auto;
+    padding-left: calc(50% - 368px);
+    padding-right: calc(50% - 368px);
   }
   .main {
     height: 370px;
@@ -1116,13 +1115,20 @@ input[type=number] {
   .featured__item {
     width: 48%;
   }
+  .featured__item:nth-child(3) {
+    display: none;
+  }
+  .cards__container {
+    height: 610px;
+  }
   .cards {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 48px;
   }
   .card {
-    height: 200px;
+    height: 134px;
     width: 320px;
     max-width: none;
   }
@@ -1137,6 +1143,46 @@ input[type=number] {
   }
   .subscribe__right {
     padding-bottom: 140px;
+  }
+  .pagination {
+    margin-left: 253px;
+    margin-bottom: 63px;
+    margin-top: -60px;
+  }
+  .content-box {
+    flex-direction: column;
+    gap: 64px;
+  }
+  .content-left__cart {
+    width: 100%;
+  }
+  .content-left__buttons {
+    display: flex;
+    gap: 48px;
+    margin-top: 32px;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+  .content-right {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 128px;
+  }
+  .content-right__adress {
+    width: 50%;
+  }
+  .content-right__total {
+    width: 50%;
+    margin-top: 40px;
+  }
+  .registration-box {
+    width: auto;
+    gap: 22px;
+  }
+  .loyalty__heading, .loyalty__text, .loyalty__item {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1168,6 +1214,9 @@ input[type=number] {
   .featured__item {
     width: 100vw;
     margin: 15px auto;
+  }
+  .featured__item:nth-child(3) {
+    display: none;
   }
   .offer {
     flex-direction: column;
