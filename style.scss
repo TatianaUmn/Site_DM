@@ -331,29 +331,27 @@ body {
     @extend %flex-align;
     justify-content: center;
     flex-direction: column;
+    &__text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #FBFBFB;
+    }
+    &__title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FBFBFB;
+        margin-bottom: 1rem;
+    }
 }
 
 .card img {
     height: 35px;
     margin-bottom: 1.8rem;
-}
-
-.card figcaption {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 19.96px;
-    line-height: 24px;
-    color: #FBFBFB;
-    margin-bottom: 1rem;
-}
-
-.card p {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 13.972px;
-    line-height: 17px;
-    text-align: center;
-    color: #FBFBFB;
 }
 
 .subscribe__container {
@@ -527,11 +525,12 @@ body {
 .product-box {
     padding-top: 10px;
     padding-bottom: 128px;
+    width: 100vw;
     &__img {
         background-color: #F7F7F7;
         margin-bottom: 41px;
         display: flex;
-        justify-content: center; 
+        justify-content: center;
     }  
 }
 
@@ -1186,7 +1185,6 @@ input[type="number"] {
         margin-bottom: 63px;
         margin-top: -60px;
     }
-
    
     .content-box {
     flex-direction: column;
@@ -1232,8 +1230,17 @@ input[type="number"] {
 
 @media screen and (max-width: 767px) {
     .center {
-        max-width: 359px;
-        margin: 0 auto;
+        padding-left: calc(50% - $widthSiteMobil / 2);
+        padding-right: calc(50% - $widthSiteMobil / 2);
+    }
+
+    .header {
+        &__left {
+            margin-left: 16px;
+        }
+        &__right {
+            margin-right: 16px;
+        }
     }
 
     .account, .basket {
@@ -1241,7 +1248,6 @@ input[type="number"] {
     }
 
     .main {
-        height: 200px;
         justify-content:center;
     }
     .main__foto {
@@ -1270,8 +1276,13 @@ input[type="number"] {
         }
     }
 
+    .featured__all {
+        margin-top: 41px;
+    }
+
     .offer {
         flex-direction: column;
+        gap: 32px;
     }
     .offer__item {
         width: 100%;
@@ -1279,17 +1290,24 @@ input[type="number"] {
     }
 
     .accesories {
+        margin-top: 32px;
+        margin-bottom: 64px;
         height: 111px;
+    }
+
+    .cards__container {
+        height: 610px;
     }
 
     .cards {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 46px;
     }
 
     .card {
-        height: 200px;
+        height: 130px;
         width: 320px;
         max-width: none;
     }
@@ -1319,4 +1337,132 @@ input[type="number"] {
     .container {
         padding-bottom: 9px;
     }
+    
+    .top-head {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        padding-top: 24px;
+        padding-bottom: 46px;
+    }
+
+    .filter-sort {
+        height: 81px;
+        padding-top: 24px;
+        gap: 50px;
+    }
+
+    .filter {
+        width: auto;
+        &__heading {
+            display: none;
+        }
+        &__svg-dekstop{
+            transform: scale(2.5);
+            margin-left: 10px;
+        }
+    }
+    .sort {
+        &__heading {
+            font-size: 12px;
+        }
+    }
+    .pagination {
+        margin-left: 46px;
+    }
+    .content-box {
+        gap: 48px;
+    }
+    .content-left {
+        gap: 30px;
+        &__description {
+            padding-top: 14px;
+            padding-left: 17px;
+            padding-right: 0px;
+        }
+        &__title {
+            font-size: 16px;
+            margin-bottom: 26px;
+        }
+        &__text {
+            font-size: 14px;
+            margin-bottom: 38px;
+        } 
+        &__close {
+            margin-right: 12px;
+        }
+        &__close svg {
+            width: 10px;
+            height: 11px;
+        }
+        &__buttons {
+            gap: 9px;
+            margin-top: 0px;
+        }
+        &__button {
+            font-size: 12px;
+            font-weight: 400;
+            padding: 9px 18px;
+        }
+    }
+    .content-right {
+        flex-direction: column;
+        margin-bottom: 96px;
+        margin-left: 9px;
+        margin-right: 6px;
+        &__adress {
+            width: 95%;
+        }
+        &__total {
+            width: 95%;
+            margin-top: 0px;
+        }
+    }
+    input[type="number"] {
+        height: 15px;
+        line-height: 1,5;
+        text-indent: 9px;
+        width: 24px;
+        font-size: 10px;
+    }
+    .registration-box {
+        flex-direction: column;
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+    .product-box {
+        padding-top: 81px;
+        padding-bottom: 81px;
+        &__img {
+            &-img {
+                width: 375px;
+            }  
+        }
+    }
+    .product__specification {
+        width: 100%;
+        &-title {
+            margin-bottom: 32px;
+        }
+        &-text {
+            line-height: 143.1%;
+            width: 326px;
+        }
+        &-price {
+            line-height: 130%;
+            margin-bottom: 32px;
+        }
+        &-dash {
+            width: 175px;
+            margin-bottom: 49px;
+        }
+        &-choose {
+            gap: 25px;
+            margin-bottom: 65px;
+            &-item-text {
+            font-size: 10px;
+            }
+        }
+    }
+    
 }
